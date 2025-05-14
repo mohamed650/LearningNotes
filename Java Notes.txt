@@ -1,0 +1,22 @@
+-> String are by Immutable in Java, which means we cannot modify the assigned name to string variable.
+
+-> If we modify the String variable it will create new object in heap memory.
+
+-> But we can do that using String Buffer and String Builder which are mutable
+
+-> String Buffer: It is one of the mutable type in java, which allows to modify the string variable without creating a new object. additionally it gives buffer size of 16 characters
+	e.g: 
+	StringBuffer sb = new StringBuffer("Khalid");
+	sb.append(" Mohamed");
+
+	-> capacity(): prints buffer size or capacity of StringBuffer.
+	-> append(): adds the value to end of string.
+	-> length(): prints the size of StringBuffer variable
+
+-> String Builder: It is also one of the mutable type in java, which allows to modify the string variable without creating a new object.
+
+-> It has the same methods as of the String Buffer.
+
+-> The difference between String Builder and String Buffer is String Builder is not thread safe class and it is faster than String Buffer.
+
+-> Thread safe means multiple threads can call methods of String Builder simultaneously. whereas in String Buffer it is not. So, String Buffer is lot slower.

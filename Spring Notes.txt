@@ -1,0 +1,21 @@
+Spring Notes:
+
+1) @Value: It injects some value to a instance field, that value may be present in properties file
+	e.g: In properties file:  name = Inject some value
+	     
+	@Value("${name}")
+	private String name;
+	
+	-> but @Value cannot be used to inject on static field, it will be null because Spring doesn't support @Value on static fields
+	-> We can inject using setters method
+	e.g:
+		private static String STATIC_NAME;
+		
+		@Value("${name}")
+		public void setStaticName(String name) {
+		    this.STATIC_NAME = name;
+		}
+		
+		public static String getStaticName() {
+		    return STATIC_NAME;
+		}
