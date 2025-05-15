@@ -20,3 +20,69 @@
 -> The difference between String Builder and String Buffer is String Builder is not thread safe class and it is faster than String Buffer.
 
 -> Thread safe means multiple threads can call methods of String Builder simultaneously. whereas in String Buffer it is not. So, String Buffer is lot slower.
+
+
+-> Static Variables: These are the instance variables and by adding static keyword before variable name we can make it common for all objects. It is shared by all the objects.
+
+-> Static Variables should be called with the class names not by their Object names.
+
+-> we can use the static variables inside the non-static methods, we can not call non-static method with class name.
+	e.g:
+	class Mobile {
+		String brand;
+		int price;
+		static String name;
+	}
+	public class Demo {
+		public static void main(String[] args) {
+			Mobile obj1 = new Mobile();
+			obj1.brand = "Samsung";
+			obj1.price = 1022;
+			Mobile.name = "S22";
+		}
+	}
+
+-> we can use static variables inside static method but we cannot use non-static variables inside static method.
+-> By passing object reference we can use non-static variables inside static methods.
+
+	e.g:
+	class Mobile {
+		String brand;
+		int price;
+		static String name;
+		
+		public void show() {
+		    System.out.println(brand+" "+price+" "+name);
+		}
+
+		public static void show1(Mobile obj) {
+		    System.out.println(obj.brand+" "+obj.price+" "+obj.name);
+		}
+	}
+	public class Demo {
+		public static void main(String[] args) {
+			Mobile obj1 = new Mobile();
+			obj1.brand = "Samsung";
+			obj1.price = 1022;
+			Mobile.name = "S22";
+			
+			obj1.show();
+			Mobile.show1(obj1);
+		}
+	}
+
+-> To initialize the non-static or Instance variables we can use constructor so every time new Object is created the constructer is called.
+-> But to initialize static variables we can use special block called static: It is called only once
+	e.g:
+	static {
+	    name = "S22"
+	}
+
+-> If there are no objects created we can still load the class by using Java Class
+	e.g: Class.forName("Mobile");
+
+
+
+
+
+
