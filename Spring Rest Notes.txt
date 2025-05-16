@@ -1,0 +1,10 @@
+Web Service: System designed to support interoperable machine-to-machine interaction over network.
+
+-> SOAP/REST are protocol for communication between client and server (machine-to-machine)
+
+-> SOAP: Simple Object Access Protocol, REST: Representational State Transfer
+
+-> REST: It is architectural style for developing web services to access a resource.
+-> The resource can be represented in many ways including JSON, XML, text etc.
+
+
